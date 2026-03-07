@@ -1,0 +1,42 @@
+[global]
+  monitor = 0
+  follow = none
+  width = (0, 1024)
+  height = (0, 1024)
+  origin = top-right
+  notification_limit = 15
+  progress_bar = true
+  progress_bar_height = 10
+  progress_bar_width = 1
+  progress_bar_min_width = 150
+  progress_bar_max_width = 300
+  font = JetBrainsMonoNL Nerd Font Propo 10
+  word_wrap = yes
+  sort = yes
+  ignore_newline = no
+
+  # retro 
+  transparency = 15
+  corner_radius = 0
+  frame_width = 2
+  frame_color = "#925633"
+  padding = 15
+  horizontal_padding = 15
+  separator_color = "#443c40"
+  highlight = "#ffb000"
+
+[urgency_low]
+  background = "#30272b"
+  foreground = "#d8a657" 
+  timeout = 5    
+
+[urgency_normal]
+  background = "#30272b"
+  foreground = "#ffb000"
+  timeout = 10
+
+[urgency_critical]
+  background = "#30272b"
+  foreground = "#ffb000"
+  frame_color = "#ffb000" 
+  timeout = 0
