@@ -1,28 +1,45 @@
-" global options 
-
+" {{{ GLOBAL
 set relativenumber
+set nowrap
+set encoding=utf-8
+syntax enable
+filetype plugin indent on
+set foldenable
+set foldmethod=indent
+set foldlevelstart=99
+" }}}
 
-" identation options
+" {{{ IDENTATION 
 set autoindent
+set cindent
 set shiftwidth=2
+set expandtab
 set smarttab
+set softtabstop=2
 set tabstop=2
+" }}}
 
-" search options 
-
+" {{{ SEARCH
 set hlsearch
 set ignorecase 
+" }}}
 
-" text rendering options
-set encoding=utf-8
-
-" templates options
-autocmd BufNewFile *.tex 0r ~/dots/vim/templates/skeleton.tex
-
-" keybinds
+" {{{ KEYBINDS  
 map <space> /
+" }}}
 
-" plugins
+" {{{ SCRIPTS 
+" Fold method
+augroup vim_config
+  autocmd!
+  autocmd BufRead,BufNewFile vimcfg setfiletype vim
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" Init templates 
+autocmd BufNewFile *.tex 0r ~/dots/vim/templates/skeleton.tex
+" }}}
+
+" {{{ PLUGINS 
 call plug#begin("~/.vim/plugged")
 Plug 'rust-lang/rust.vim'
 Plug 'dense-analysis/ale'
@@ -31,9 +48,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
-
-syntax enable
-filetype plugin indent on
 
 " rust.vim options
 "let g:rustfmt_autosave=1
@@ -72,3 +86,4 @@ autocmd VimEnter * NERDTree | wincmd p
 " Close NERDTree automatically if it's the last thing on screen
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 
+" }}}
