@@ -6,7 +6,7 @@ configuration {
 	cycle: true;
 	sorting-method: "normal";
 	steal-focus: true;
-  modi: "window, run, drun, emoji";
+  modi: "window,run,drun,emoji";
   timeout {
       action: "kb-cancel";
       delay:  0;
