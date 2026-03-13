@@ -13,7 +13,14 @@ Arquivos de configuração do meu Arch Linux (Lunix) buscando um estilo mais ret
 - `waybar`: configuração da Waybar.
 
 ## Próximos Passos
-Com a interface do `rmpc` configurada como eu gostaria, pretendo importar as configurações do Vim, Zsh e então a Waybar e mais configurações do Hyprland.
+# Concluido 07/03/26
+# Com a interface do `rmpc` configurada como eu gostaria, pretendo importar as configurações do Vim, Zsh e então a Waybar e mais configurações do Hyprland.
+Com as configurações básicas feitas, focarei em:
+- Adicionar script com interação na Waybar e Rofi para conexão de wi-fi simples;
+- Remodelar a configuração do Zsh e traze-la para esta pasta;
+- Remover comentários e coisas geradas automaticamente;
+
+Após todas essas configurações, é provável que experimente utilizar o neovim e configurá-lo...
 
 ## Créditos
 Compôr uma interface do Linux nunca é um trabalho individual, muito pelo contrário. Logo, abaixo estão a lista das pessoas/projetos os quais me inspiraram ou que eu transferi diretamente o código para minha máquina:
