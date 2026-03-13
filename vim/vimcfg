@@ -32,8 +32,8 @@ map <space> /
 " Fold method
 augroup vim_config
   autocmd!
-  autocmd BufRead,BufNewFile vimcfg setfiletype vim
-  autocmd FileType vim setlocal foldmethod=marker
+  autocmd BufRead,BufNewFile vimcfg,hyprland.conf,hyprlock.conf setfiletype cfg 
+  autocmd FileType cfg setlocal foldmethod=marker
 augroup END
 " Init templates 
 autocmd BufNewFile *.tex 0r ~/dots/vim/templates/skeleton.tex

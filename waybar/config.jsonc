@@ -1,22 +1,16 @@
 {
-  // Waybar at top layer
   "layer": "top",
   "reload_on_style_change": true,
-  // Waybar position (top|bottom|left|right)
   "position": "top",
   "passthrough": false,
-  // Gaps between modules (4px)
   "spacing": 10,
-  // Gap from the top of the screen
   "margin-top": 0,
   "margin-left": 1,
   "margin-right": 1,
   "margin-bottom": 1,
-  // Choose the order of the modules
   "modules-left": ["custom/icon", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["tray", "clock", "battery", "network"],
-
   "custom/icon": {
     "format": "󰿈"
   },
@@ -29,7 +23,7 @@
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "", 
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -40,9 +34,8 @@
     "separate-outputs": true,
     "format": "{class}",
     "rewrite": {
-      // if any window is focused display Finder
-      "": "Lothlórien",
-      "kitty": "Shell",
+      "": "lunix",
+      "kitty": "Lothlórien",
       "firefox": "Browser"
     }
   },
