@@ -1,0 +1,86 @@
+# lunix's shell config (LSH)
+
+# {{{ GENERAL
+setopt MENU_COMPLETE
+setopt LIST_PACKED
+setopt AUTO_LIST
+# }}}
+
+# {{{ PROMPT
+autoload -Uz vcs_info        # enable vcs_info to gather info from version control systems
+autoload -U colors && colors # enable colors, why not?
+
+zstyle ':vcs_info:*' enable git # enable git only
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info ) # load git 
+zstyle ':vcs_info:*' formats '%s(%F{64}%b%f)' # display 'git' and current branch
+setopt prompt_subst
+
+PS1='%F{137}%m%f '        # hostname
+PS1+='@ %F{214}%c%f '     # path
+PS1+='$vcs_info_msg_0_ '  # git info
+PS1+='> '                 # icon
+# }}}
+
+# {{{ HISTORY
+HISTSIZE=1000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+# }}}
+
+# {{{ AUTOCOMPLETION
+autoload -U compinit; 
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+# }}}
+
+# {{{ ALIAS
+alias l="ls -ll"
+alias la="ls -la"
+alias ..="cd .."
+alias ~="cd ~"
+alias dbeaver="$HOME/apps/dbeaver/dbeaver"
+alias shut="shutdown now"
+alias src="source $HOME/dots/zsh/zshrc"
+alias g="lazygit"
+alias v="vim"
+alias cat="bat"
+# }}}
+
+# {{{ VIM MODE!!!
+bindkey -v
+export KEYTIMEOUT=1
+
+# Vim mode on autocompletion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+# function vi-shape { 
+#  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+#    echo -ne '\e[1 q'
+#  elif [[ ${KEYMAP} == main ]] ||
+#       [[ ${KEYMAP} == viins ]] ||
+#       [[ -z ${KEYMAP} ]] ||
+#       [[ $1 = 'beam' ]]; then
+#    echo -ne '\e[5 q'
+#  fi
+#}
+#zle -N vi-shape
+# }}}
+
+# {{{ PLUGINS
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# }}}
+
+# {{{ OTHER CONFIG
+export LANG=pt_BR.UTF-8
+export EDITOR="vim"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# }}}

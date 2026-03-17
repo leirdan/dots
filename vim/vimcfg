@@ -32,7 +32,7 @@ map <space> /
 " Fold method
 augroup vim_config
   autocmd!
-  autocmd BufRead,BufNewFile vimcfg,hyprland.conf,hyprlock.conf setfiletype cfg 
+  autocmd BufRead,BufNewFile vimcfg,hyprland.conf,hyprlock.conf,zshrc,zprofile setfiletype cfg 
   autocmd FileType cfg setlocal foldmethod=marker
 augroup END
 " Init templates 
