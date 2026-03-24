@@ -19,7 +19,7 @@ setopt prompt_subst
 
 PS1='%F{137}%m%f '        # hostname
 PS1+='@ %F{214}%c%f '     # path
-PS1+='$vcs_info_msg_0_ '  # git info
+PS1+='$vcs_info_msg_0_'  # git info
 PS1+='> '                 # icon
 # }}}
 
@@ -47,7 +47,9 @@ alias shut="shutdown now"
 alias src="source $HOME/dots/zsh/zshrc"
 alias g="lazygit"
 alias v="vim"
-alias cat="bat"
+alias c="bat"
+alias z="zathura"
+alias b="bluetui"
 # }}}
 
 # {{{ VIM MODE!!!
