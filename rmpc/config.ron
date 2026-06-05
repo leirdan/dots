@@ -67,7 +67,7 @@
         navigation: {
             "<C-c>":      Close,
             "<Esc>":      Close,
-            "<CR>":       Confirm,
+            "<Space>":    Confirm,
             "k":          Up,
             "j":          Down,
             "h":          Left,
@@ -86,7 +86,7 @@
             "<PageDown>": PageDown,
             "gg":         Top,
             "G":          Bottom,
-            "<Space>":    Select,
+            "<CR>":       Select,
             "<C-Space>":  InvertSelection,
             "/":          EnterSearch,
             "n":          NextResult,
