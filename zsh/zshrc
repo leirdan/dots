@@ -46,10 +46,15 @@ alias dbeaver="$HOME/apps/dbeaver/dbeaver"
 alias shut="shutdown now"
 alias src="source $HOME/dots/zsh/zshrc"
 alias g="lazygit"
-alias v="vim"
-alias c="bat"
-alias z="zathura"
+alias v="nvim"
+alias cat="bat"
+alias za="zathura"
 alias b="bluetui"
+alias r="rmpc"
+alias ru="rmpc update"
+alias shark="termshark -i wlan0"
+alias packettracer="/usr/lib/packettracer/packettracer.AppImage"
+alias relogin="loginctl terminate-user $USER"
 # }}}
 
 # {{{ VIM MODE!!!
@@ -82,7 +87,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # {{{ OTHER CONFIG
 export LANG=pt_BR.UTF-8
-export EDITOR="vim"
+export EDITOR="nvim"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 # }}}
